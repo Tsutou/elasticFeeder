@@ -1,12 +1,14 @@
+import 'dart:convert';
+
 class NewsJson{
   String status;
-  String totalResults;
+  int totalResults;
   List<News> articles;
 
   NewsJson.fromJson(Map<String, dynamic> json){
     status = json['status'];
     totalResults = json['totalResults'];
-    articles = json['articles'];
+    articles = jsonDecode(json['articles']);
   }
 }
 
